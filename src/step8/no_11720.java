@@ -9,7 +9,6 @@ public class no_11720 {
 	public static void main(String[] args) throws IOException {
 		
 		Scanner sc = new Scanner(System.in);
-		InputStreamReader re = new InputStreamReader(System.in);
 		int sum = 0;
 		
 		int N = sc.nextInt();
