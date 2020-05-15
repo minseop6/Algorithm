@@ -2,7 +2,7 @@ package hash;
 
 import java.util.HashMap;
 
-class level1 {
+class step1 {
     public String solution(String[] participant, String[] completion) {
         
         String answer = "";
