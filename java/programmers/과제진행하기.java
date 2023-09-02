@@ -3,9 +3,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Stack;
 
-//[["music", 740, "40"], ["computer", 750, "100"], ["science", 760, "50"], ["history", 840, "30"]]
-// computer 90 music 30
-// science history
 public class 과제진행하기 {
   public String[] solution(String[][] plans) {
     List<String> answer = new ArrayList<String>();
