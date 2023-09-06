@@ -36,7 +36,6 @@ public class 무인도여행 {
     int total = 0;
     while (!queue.isEmpty()) {
       Position currentPosition = queue.poll();
-      System.out.println(currentPosition.x + ", " + currentPosition.y + ", " + currentPosition.day + ", " + total);
       total += currentPosition.day;
       for (int i : IntStream.range(0, dX.length).toArray()) {
         int nextX = currentPosition.x + dX[i];
