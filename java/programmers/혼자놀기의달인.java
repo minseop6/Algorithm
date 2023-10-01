@@ -1,31 +1,33 @@
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 
 public class 혼자놀기의달인 {
   public int solution(int[] cards) {
-    int answer = 0;
+    boolean[] visitedBox = new boolean[cards.length];
+    Arrays.fill(visitedBox, false);
+    ArrayList<Integer> gradeList = new ArrayList<Integer>();
     for (int i = 0; i < cards.length; i++) {
-      boolean[] visitedBox = new boolean[cards.length];
-      Arrays.fill(visitedBox, false);
-      int firstGrade = grade(cards, visitedBox, i);
-      int secondGrade = 0;
-      for (int j = 0; j < visitedBox.length; j++) {
-        if (!visitedBox[j]) {
-          secondGrade = Math.max(grade(cards, visitedBox, j), secondGrade);
-        }
+      if (!visitedBox[i]) {
+        visitedBox[i] = true;
+        int grade = dfs(cards, visitedBox, cards[i]) + 1;
+        gradeList.add(grade);
       }
-      answer = Math.max(answer, firstGrade * secondGrade);
     }
-    return answer;
+
+    if (gradeList.size() <= 1) {
+      return 0;
+    }
+
+    gradeList.sort(Collections.reverseOrder());
+    return gradeList.get(0) * gradeList.get(1);
   }
 
-  private int grade(int[] cards, boolean[] visitedBox, int startBox) {
-    int currentIndex = startBox;
-    int grade = 0;
-    while (!visitedBox[currentIndex]) {
-      visitedBox[currentIndex] = true;
-      currentIndex = cards[currentIndex] - 1;
-      grade++;
+  private int dfs(int[] cards, boolean[] visitedBox, int index) {
+    if (visitedBox[index - 1]) {
+      return 0;
     }
-    return grade;
+    visitedBox[index - 1] = true;
+    return dfs(cards, visitedBox, cards[index - 1]) + 1;
   }
 }
