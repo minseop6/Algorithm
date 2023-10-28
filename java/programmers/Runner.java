@@ -2,9 +2,14 @@ import java.util.Arrays;
 
 public class Runner {
   public static void main(String[] args) {
-    long result = new 혼자놀기의달인().solution(new int[] { 8,6,3,7,2,5,1,4 });
+    var result = new 삼각달팽이().solution(6);
+//    boolean result = new no4().solution(new String[][] {
+//      { "O", "A", "C", "D", "E", "O" },
+//      { "H", "O", "T", "C", "A", "P" },
+//      { "P", "U", "S", "E", "T", "Z" }
+//    }, "ATS");
     System.out.println("=======================result");
-    System.out.println(result);
-//    Arrays.stream(result).forEach((i) -> System.out.println(i));
+//    System.out.println(result);
+    Arrays.stream(result).forEach(System.out::println);
   }
 }
