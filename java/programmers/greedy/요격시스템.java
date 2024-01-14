@@ -1,3 +1,5 @@
+package greedy;
+
 import java.util.Arrays;
 
 public class 요격시스템 {

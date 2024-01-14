@@ -1,8 +1,8 @@
-import java.util.Arrays;
+import greedy.단속카메라;
 
 public class Runner {
   public static void main(String[] args) {
-    var result = new 섬연결하기().solution(4, new int[][]{{0,1,1},{0,2,2},{1,2,5},{1,3,1},{2,3,8}});
+    var result = new 단속카메라().solution(new int[][]{{-20,-15},{-14,-5},{-18,-13},{-5,-3}});
     System.out.println("=======================result");
     System.out.println(result);
 //    Arrays.stream(result).forEach(System.out::println);
