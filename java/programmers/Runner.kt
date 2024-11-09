@@ -1,11 +1,21 @@
 fun main() {
-    val result = 이모티콘할인행사().solution(
-        arrayOf(
-            intArrayOf(40, 10000),
-            intArrayOf(25, 10000),
-        ),
-        intArrayOf(7000, 9000)
+    val edges = arrayOf(
+        intArrayOf(0, 1),
+        intArrayOf(1, 2),
+        intArrayOf(1, 4),
+        intArrayOf(0, 8),
+        intArrayOf(8, 7),
+        intArrayOf(9, 10),
+        intArrayOf(9, 11),
+        intArrayOf(4, 3),
+        intArrayOf(6, 5),
+        intArrayOf(4, 6),
+        intArrayOf(8, 9)
+    )
+    val result = 양과늑대().solution(
+        intArrayOf(0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1),
+        edges,
     )
 
-    result.forEach { print("$it ") }
+    println(result)
 }
