@@ -7,14 +7,14 @@ fun main() = with(Scanner(System.`in`)) {
     val length = nextInt()
     val numbers = (1..number).toList()
 
-    val backTracker = NumberBackTracker(numbers, length)
+    val backTracker = DeduplicateBackTracker(numbers, length)
 
     val result = numbers.flatMap { backTracker.search(setOf(it)) }
 
     result.forEach { println(it.joinToString(" ")) }
 }
 
-data class NumberBackTracker(
+data class DeduplicateBackTracker(
     private val numbers: List<Int>,
     private val maxLength: Int,
 ) {
